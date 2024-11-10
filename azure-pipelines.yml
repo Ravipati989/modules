@@ -9,7 +9,7 @@ stages:
     jobs:
       - job : deploy
         steps:
-          - task: AzureResourceManagerTemplateDeployment@3
+          - task: AzureResourceManagerTemplateDeployment@2
             inputs:
               deploymentScope: 'Resource Group'
               azureResourceManagerConnection: 'Azure subscription 1(76589609-f356-45d6-9343-cacd37492e24)'
