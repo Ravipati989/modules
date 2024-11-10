@@ -1,0 +1,22 @@
+
+trigger:
+- main
+
+pool: Default
+
+stages:
+  - stage: dev
+    jobs:
+      - job : deploy
+        steps:
+          - task: AzureResourceManagerTemplateDeployment@3
+            inputs:
+              deploymentScope: 'Resource Group'
+              azureResourceManagerConnection: 'Azure subscription 1(76589609-f356-45d6-9343-cacd37492e24)'
+              subscriptionId: '76589609-f356-45d6-9343-cacd37492e24'
+              action: 'Create Or Update Resource Group'
+              resourceGroupName: 'mrcloudrg'
+              location: 'UK South'
+              templateLocation: 'Linked artifact'
+              csmFile: '*.json'
+              deploymentMode: 'Incremental'
