@@ -7,7 +7,7 @@ trigger:
 - main
 
 pool:
-  vmImage: Default
+  vmImage: Hosted Agent
 
 stages:
   - stage: dev
@@ -24,4 +24,4 @@ stages:
               location: 'UK South'
               templateLocation: 'Linked artifact'
               csmFile: 'https://github.com/Ravipati989/modules/blob/main/arm.json'
-              deploymentMode: 'Complete'
+              deploymentMode: 'Incremental'
