@@ -9,7 +9,12 @@ stages:
     jobs:
       - job : deploy
         steps:
-          - task: AzureResourceManagerTemplateDeployment@2
+          
+
+          - task: NodeTaskRunnerInstaller@0
+            inputs:
+              nodeVersion: '6'
+          - task: AzureResourceManagerTemplateDeployment@3
             inputs:
               deploymentScope: 'Resource Group'
               azureResourceManagerConnection: 'Azure subscription 1(76589609-f356-45d6-9343-cacd37492e24)'
