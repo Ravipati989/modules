@@ -10,10 +10,6 @@ stages:
       - job : deploy
         steps:
           
-
-          - task: NodeTaskRunnerInstaller@0
-            inputs:
-              nodeVersion: '6'
           - task: AzureResourceManagerTemplateDeployment@3
             inputs:
               deploymentScope: 'Resource Group'
